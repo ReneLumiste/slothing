@@ -8,6 +8,7 @@
       </ul>
     </div>
     <div class="copyright">
+      <p>Email: info@slothing.ee</p>
       <p>Copyright &copy; Slothing OÜ. All Rights Reserved</p>
     </div>
   </footer>

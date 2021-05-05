@@ -31,7 +31,8 @@
               <h3>Francis Scott Fitzgerald "Suur Gatsby"</h3>
             </div>
             <div class="back">
-              <p>"Suur Gatsby" on raamat, mis  sssssssssss ddsf dsf sdf we dfs ew fds</p>
+              <p>"Suur Gatsby" on romantiline seiklusjutt, mis sobib kõigile adrenaliinisõpradele. Jay Gatsby on miljonär, kes korraldab suurejoonelisi pidusid ja kiindub sügavalt Daisy Buchananisse.</p>
+              <p>Raamat on jutustus Gatsby sõbra Carraway vaatepunktist ja tema mõtetest.</p>
             </div>
           </div>
         </div>
@@ -43,7 +44,9 @@
               <h3>George Orwell "1984"</h3>
             </div>
             <div class="back">
-              <p>See raamat sobib ideaalselt neile, kes sssssssssss ddsf dsf sdf we dfs ew fds</p>
+              <p>George Orwelli "1984" on väga põnev düstoopiline väljamõeldis, mis paneb mõtlema mineviku ja tuleviku olemuse üle. </p>
+              <p>Kes kontrollib minevikku, kontrollib ka tulevikku. Kes saab aru olevikust, mõistab ka minevikku. </p>
+              <p>Sellised küsimused ja arutelud on selle raamatu põhisisu.</p>
             </div>
           </div>
         </div>
@@ -55,7 +58,8 @@
               <h3>Mihhail Bulgakov "Koera süda"</h3>
             </div>
             <div class="back">
-              <p>"Koera süda" räägib loo sellest, sssssssssss ddsf dsf sdf we dfs ew fds </p>
+              <p>"Koera süda" on Mihhail Bulgakovi üks märkimisväärsemaid teoseid. Seda raamatut tõlgendatakse kui revolutsiooni ekslikku katset inimkonda radikaalselt ümber kujundada. </p>
+              <p>See raamat on Venemaal tõeline kultuurifenomen, mida inimesed (koolilastest poliitikuteni) läbi ja lõhki teavad.</p>
             </div>
           </div>
         </div>

@@ -3,7 +3,6 @@ import Home from "../views/Home.vue";
 import Products from "../views/Products.vue";
 import Contact from "../views/Contact.vue";
 import About from "../views/About.vue";
-import Example from "../views/Example.vue";
 
 const routes = [
   {
@@ -20,11 +19,6 @@ const routes = [
     path: "/tooted",
     name: "Products",
     component: Products,
-  },
-  {
-    path: "/example",
-    name: "Example",
-    component: Example,
   },
   {
     path: "/meist",

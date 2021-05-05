@@ -2,20 +2,43 @@
   <div class="newsletter">
     <h1>Ühine meie uudiskirjaga</h1>
     <p>Liitu meie uudiskirjaga, et saaksid esimesena teada uutest raamatutest ning parimatest pakkumistest.</p>
-    <div class="email" id="newsletter">
-      <i class="fas fa-envelope"></i>
-      <input id="mail" type="email" class="news-email" placeholder="Sinu email" required>
-      <input v-on:click="sendEmail" type="submit" class="subscribe" value="Saada" >
-    </div>
+      <form v-on:submit.prevent="sendNewsletter" action="">
+        <div class="email" id="newsletter">
+          <i class="fas fa-envelope"></i>
+          <input v-model="email" id="mail" type="email" class="news-email" placeholder="Sinu email" required>
+          <button id="submit" type="submit" class="subscribe">Saada</button>
+        </div>
+      </form>
   </div>
 </template>
 
 <script>
 export default {
   name:'Newsletter',
-  methods:{
-    sendEmail(){
-      alert('Meil saadetud')
+
+  data: function() {
+    return {
+      email: "",
+    }
+  },
+  methods: {
+    sendNewsletter: async function () {
+      let infoNewsletter = {
+        "email": this.email,
+      };
+      try {
+        const sendNewsletterRequest = await fetch('http://localhost:3000/newsletter', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(infoNewsletter),
+        });
+        let sendNewsletterResponse = await sendNewsletterRequest.json();
+        console.log("result" + JSON.stringify(sendNewsletterResponse));
+      } catch (e){
+        console.log(e)
+      }
     }
   }
 }
@@ -24,7 +47,6 @@ export default {
 <style scoped>
 /*Newsletter*/
 .newsletter{
-  margin-top: 5%;
   background: url("../assets/raamaturiiul.jpg") no-repeat center;
   background-size: cover;
   padding: 100px 40px;
@@ -35,7 +57,7 @@ export default {
 .newsletter p {
   max-width: 600px;
   margin: 40px auto;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
 }
 

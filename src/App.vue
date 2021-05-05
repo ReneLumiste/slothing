@@ -128,10 +128,37 @@ a{
 .back p{
   display: inline-block;
   color: black;
-  margin-top: 200px;
+  text-align: left;
+  margin-left: 5%;
+  margin-top: 10%;
 }
 
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 1600px) {
+  .card {
+    width: 250px;
+    height: 350px;
+  }
+  .productsSisu {
+    width: 60%;
+  }
+  .front h3{
+    margin-top: 110%;
+    width: 230px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .card {
+    width: 250px;
+    height: 350px;
+  }
+  .productsSisu {
+    width: 73%;
+  }
+}
+
+
+@media screen and (max-width: 1090px) {
   .products h1{
     margin-top: 10%;
     font-size: 26px;
@@ -200,6 +227,7 @@ a{
     color: white;
     font-size: 24px;
     font-weight: bolder;
+    transition: none;
     border: none;
   }
 }

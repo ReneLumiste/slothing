@@ -3,18 +3,18 @@
   <div class="contactContainer">
     <div class="contact">
       <div class="contactSisu">
-        <i class="fa fa-envelope"> info@slothing.com</i>
+        <i class="fa fa-envelope"> info@slothing.ee</i>
         <br>
         <i class="fa fa-phone"> +372 56620720</i>
       </div>
       <div class="contactForm">
         <h2>Võta meiega ühendust</h2>
-        <form action="" method="post" class="form">
-          <input type="text" class="text-box" placeholder="Sinu täisnimi" required>
-          <input type="email" class="text-box" placeholder="Sinu email" required>
-          <input type="text" class="text-single" placeholder="Teema" required>
-          <textarea name="" id="" cols="30" rows="10" placeholder="Sisesta sõnum" required></textarea>
-          <input type="submit" class="avasta" value="Saada">
+        <form v-on:submit.prevent="sendContact" action="" method="POST" class="form">
+          <input v-model="name" type="text" class="text-box" placeholder="Sinu täisnimi" required>
+          <input v-model="email" type="email" class="text-box" placeholder="Sinu email" required>
+          <input v-model="subject" type="text" class="text-single" placeholder="Teema" required>
+          <textarea v-model="input" name="" id="" class="text-area" cols="30" rows="10" placeholder="Sisesta sõnum" required></textarea>
+          <button type="submit" class="avasta">Saada</button>
         </form>
       </div>
     </div>
@@ -31,12 +31,49 @@ export default {
   components: {
     Footer,
     Navbar
+  },
+  data: function() {
+    return {
+      name: "",
+      email: "",
+      subject: "",
+      input: "",
+    }
+  },
+  methods: {
+    sendContact: async function () {
+      let infoContact = {
+        "name": this.name,
+        "receiver": this.email,
+        "title": this.subject,
+        "body": this.input,
+      };
+      try {
+        const sendContactRequest = await fetch('http://localhost:3000/contact', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(infoContact),
+        });
+        let sendContactResponse = await sendContactRequest.json();
+        console.log("result" + JSON.stringify(sendContactResponse));
+      } catch (e){
+        console.log(e)
+      }
+    }
   }
 }
 </script>
 
 <style scoped>
 /* KONTAKT PAGE*/
+::placeholder{
+  color: white;
+}
+.text-box,.text-single,.text-area{
+  color: white;
+}
 .contact{
   width: 100%;
   display: flex;

@@ -3,18 +3,48 @@
     <h1>Millist raamatut sooviksid sina järgmisena näha?</h1>
     <div class="suggestion">
       <i class="fal fa-books"></i>
-      <input type="text" class="suggestionText" placeholder="Autor" required>
-      <input type="text" class="suggestionText" placeholder="Raamatu pealkiri" required>
+      <form v-on:submit.prevent="sendNextBook" action="">
+      <input v-model="author" type="text" class="suggestionText" placeholder="Autor" required>
+      <input v-model="title" type="text" class="suggestionText" placeholder="Raamatu pealkiri" required>
       <br>
-      <input type="submit" class="avasta" value="Saada">
+      <button type="submit" class="avasta">Saada</button>
+      </form>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "NextBook"
+  name: "NextBook",
+  data: function() {
+    return {
+      author: "",
+      title: "",
+    }
+  },
+  methods: {
+    sendNextBook: async function () {
+      let infoNextBook = {
+        "author": this.author,
+        "title": this.title,
+      };
+      try {
+        const sendNextBookRequest = await fetch('http://localhost:3000/nextBook', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(infoNextBook),
+        });
+        let sendNextBookResponse = await sendNextBookRequest.json();
+        console.log("result" + JSON.stringify(sendNextBookResponse));
+      } catch (e){
+        console.log(e)
+      }
+    }
+  }
 }
+
 </script>
 
 <style scoped>
@@ -72,6 +102,9 @@ export default {
     border-radius: 10px;
     margin-right: 15px;
     margin-bottom: 20px;
+  }
+  .suggestionSend:hover{
+    background:#F94000;
   }
 }
 </style>

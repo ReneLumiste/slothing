@@ -7,10 +7,11 @@
         <div class="card">
           <div class="inner">
             <div class="front">
-              <h3>Esimene Kirjanik "Raamat"</h3>
+              <h3>Francis Scott Fitzgerald "Suur Gatsby"</h3>
             </div>
             <div class="back">
-              <p>See raamat on see ja see, see ja see, see ja see.</p>
+              <p>"Suur Gatsby" on romantiline seiklusjutt, mis sobib kõigile adrenaliinisõpradele. Jay Gatsby on miljonär, kes korraldab suurejoonelisi pidusid ja kiindub sügavalt Daisy Buchananisse.</p>
+              <p>Raamat on jutustus Gatsby sõbra Carraway vaatepunktist ja tema mõtetest.</p>
             </div>
           </div>
         </div>
@@ -19,10 +20,12 @@
         <div class="card">
           <div class="inner">
             <div class="front">
-              <h3>Teine Kirjanik "Raamat"</h3>
+              <h3>George Orwell "1984"</h3>
             </div>
             <div class="back">
-              <p>See raamat on see ja see, see ja see, see ja see.</p>
+              <p>George Orwelli "1984" on väga põnev düstoopiline väljamõeldis, mis paneb mõtlema mineviku ja tuleviku olemuse üle. </p>
+              <p>Kes kontrollib minevikku, kontrollib ka tulevikku. Kes saab aru olevikust, mõistab ka minevikku. </p>
+              <p>Sellised küsimused ja arutelud on selle raamatu põhisisu.</p>
             </div>
           </div>
         </div>
@@ -31,10 +34,11 @@
         <div class="card">
           <div class="inner">
             <div class="front">
-              <h3>Kolmas Kirjanik "Raamat"</h3>
+              <h3>Mihhail Bulgakov "Koera süda"</h3>
             </div>
             <div class="back">
-              <p>See raamat on see ja see, see ja see, see ja see.</p>
+              <p>"Koera süda" on Mihhail Bulgakovi üks märkimisväärsemaid teoseid. Seda raamatut tõlgendatakse kui revolutsiooni ekslikku katset inimkonda radikaalselt ümber kujundada. </p>
+              <p>See raamat on Venemaal tõeline kultuurifenomen, mida inimesed (koolilastest poliitikuteni) läbi ja lõhki teavad.</p>
             </div>
           </div>
         </div>
@@ -43,10 +47,10 @@
         <div class="card">
           <div class="inner">
             <div class="front">
-              <h3>Neljas Kirjanik "Raamat"</h3>
+              <h3>Raamat tulekul</h3>
             </div>
             <div class="back">
-              <p>See raamat on see ja see, see ja see, see ja see.</p>
+              <p>See raamat on siia lisatud näidise eesmärgil.</p>
             </div>
           </div>
         </div>
@@ -55,10 +59,10 @@
         <div class="card">
           <div class="inner">
             <div class="front">
-              <h3>Viies Kirjanik "Raamat"</h3>
+              <h3>Raamat tulekul</h3>
             </div>
             <div class="back">
-              <p>See raamat on see ja see, see ja see, see ja see.</p>
+              <p>See raamat on siia lisatud näidise eesmärgil.</p>
             </div>
           </div>
         </div>
@@ -67,10 +71,10 @@
         <div class="card">
           <div class="inner">
             <div class="front">
-              <h3>Kuues Kirjanik "Raamat"</h3>
+              <h3>Raamat tulekul</h3>
             </div>
             <div class="back">
-              <p>See raamat on see ja see, see ja see, see ja see.</p>
+              <p>See raamat on siia lisatud näidise eesmärgil.</p>
             </div>
           </div>
         </div>

@@ -54,9 +54,7 @@ nav ul li{
 }
 
 nav ul li a:hover{
-  font-size: larger;
   color: #F94000;
-  transition: 0.1s;
 }
 
 .toggle{
@@ -77,7 +75,7 @@ nav ul li a:hover{
   border-radius: 10px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1050px) {
   /*.toggle{
     display: flex;
   }*/

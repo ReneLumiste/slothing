@@ -2,14 +2,6 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
 import firebase from 'firebase'
-/**
-const toggleBtn = document.getElementsByClassName("toggle")[0]
-const navButtons = document.getElementsByClassName("navButtons")[0]
-
-toggleBtn.addEventListener("click", () =>{
-    navButtons.classList.toggle("active")
-})
- **/
 
 const firebaseConfig = {
     apiKey: "AIzaSyBzNHpf2vN5_63gaNfRtw7nQGkzcV_RY1M",

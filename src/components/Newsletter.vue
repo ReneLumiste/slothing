@@ -2,7 +2,7 @@
   <div class="newsletter">
     <h1>Ühine meie uudiskirjaga</h1>
     <p>Liitu meie uudiskirjaga, et saaksid esimesena teada uutest raamatutest ning parimatest pakkumistest.</p>
-      <form v-on:submit.prevent="sendNewsletter" action="">
+      <form v-on:submit.prevent="sendNewsLetter" action="">
         <div class="email" id="newsletter">
           <i class="fas fa-envelope"></i>
           <input v-model="email" id="mail" type="email" class="news-email" placeholder="Sinu email" required>
@@ -13,35 +13,28 @@
 </template>
 
 <script>
+import { DB } from "@/main";
 export default {
-  name:'Newsletter',
-
-  data: function() {
+  name: "Newsletter",
+  data: function () {
     return {
       email: "",
-    }
+    };
   },
   methods: {
-    sendNewsletter: async function () {
-      let infoNewsletter = {
-        "email": this.email,
-      };
-      try {
-        const sendNewsletterRequest = await fetch('http://localhost:3000/newsletter', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(infoNewsletter),
-        });
-        let sendNewsletterResponse = await sendNewsletterRequest.json();
-        console.log("result" + JSON.stringify(sendNewsletterResponse));
-      } catch (e){
-        console.log(e)
-      }
-    }
-  }
-}
+    sendNewsLetter() {
+      DB.collection("newsLetter")
+          .add({ email: this.email })
+          .then(() => {
+            this.email = "";
+            alert("Oled liitunud uudiskirjaga!");
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+    },
+  },
+};
 </script>
 
 <style scoped>

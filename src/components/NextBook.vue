@@ -14,37 +14,30 @@
 </template>
 
 <script>
+import { DB } from "@/main";
 export default {
   name: "NextBook",
-  data: function() {
+  data: function () {
     return {
       author: "",
       title: "",
-    }
+    };
   },
   methods: {
-    sendNextBook: async function () {
-      let infoNextBook = {
-        "author": this.author,
-        "title": this.title,
-      };
-      try {
-        const sendNextBookRequest = await fetch('http://localhost:3000/nextBook', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(infoNextBook),
-        });
-        let sendNextBookResponse = await sendNextBookRequest.json();
-        console.log("result" + JSON.stringify(sendNextBookResponse));
-      } catch (e){
-        console.log(e)
-      }
-    }
-  }
-}
-
+    sendNextBook() {
+      DB.collection("nextBook")
+          .add({ author: this.author, title: this.title })
+          .then(() => {
+            this.author = ""
+            this.title=""
+            alert("Sinu soovitus on lisatud!");
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+    },
+  },
+};
 </script>
 
 <style scoped>

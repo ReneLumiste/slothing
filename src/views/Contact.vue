@@ -25,45 +25,55 @@
 <script>
 import Footer from "../components/Footer";
 import Navbar from "@/components/Navbar";
-
+import { DB } from "@/main";
 export default {
   name: "Contact",
   components: {
     Footer,
-    Navbar
+    Navbar,
   },
-  data: function() {
+  data: function () {
     return {
       name: "",
       email: "",
       subject: "",
       input: "",
-    }
+    };
   },
   methods: {
-    sendContact: async function () {
-      let infoContact = {
-        "name": this.name,
-        "receiver": this.email,
-        "title": this.subject,
-        "body": this.input,
-      };
-      try {
-        const sendContactRequest = await fetch('http://localhost:3000/contact', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(infoContact),
-        });
-        let sendContactResponse = await sendContactRequest.json();
-        console.log("result" + JSON.stringify(sendContactResponse));
-      } catch (e){
-        console.log(e)
-      }
-    }
-  }
-}
+    sendContact() {
+      DB.collection("contact")
+          .add({
+            name: this.name,
+            email: this.email,
+            subject: this.subject,
+            input: this.input,
+          })
+          .then(() => {
+            alert("Email saadetud!");
+            Email.send({
+              Host: "smtp.gmail.com",
+              Username: "slothingtest@gmail.com",
+              Password: "slothingTest123",
+              To: "slothingtest@gmail.com",
+              From: "slothingtest@gmail.com",
+              Subject: `Uus pöördumine: ${this.subject} - ${this.name}`,
+              Body: `<b>Email:</b> ${this.email} \n <br>\n <b>Nimi:</b> ${this.name} <br>\n <b>Teema:</b> ${this.subject} <br>\n <b>Sisu:</b> ${this.input}<br>`,
+            })
+                .then(() => {
+                  this.name = "";
+                  this.email = "";
+                  this.subject = "";
+                  this.input = "";
+                });
+          })
+          .catch((err) => {
+            alert("Palun proovi uuesti");
+            console.log(err);
+          });
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -133,7 +143,6 @@ export default {
   border-radius: 2%;
   margin-bottom: 20px;
 }
-
 .contactForm textarea{
   background: #024F44;
   border: none;
@@ -145,7 +154,6 @@ export default {
   border-radius: 2%;
   margin-bottom: 20px;
 }
-
 @media screen and (max-width: 1050px) {
   .contact{
     flex-direction: column;
